@@ -1,0 +1,187 @@
+/* pages/launch/launch.wxss */
+page {
+  height: 100%;
+}
+
+.swiper-container {
+  position: relative;
+  width: 100%;
+   height: 100%;
+  background: #2b9d9f;
+}
+
+.swiper-container swiper-item {
+  height: 100%;
+  /* background: red; */
+}
+
+.swiper-container swiper-item image {
+  width: 100%;
+  max-height: 100%;
+}
+
+.shadow {
+  position: relative;
+  margin-top: 5%;
+  height: 8.4%;
+}
+
+.swiper-container .back-color-container {
+  position: relative;
+  width: 100%;
+  /* height: 38.5%; */
+  height: 42%;
+  margin-top: calc(5%);
+}
+
+.back-color-container image {
+  position: absolute;
+}
+
+.swiper-container .top-brand {
+  height: 22.5%;
+}
+
+.back-color-container .back-color-1,
+.back-color-container .back-color-2,
+.back-color-container .back-color-3 {
+  width: 600px;
+}
+
+.back-color-container .back-color-1,
+.back-color-container .back-color-2,
+.back-color-container .back-color-3 {
+  position: absolute;
+  top: 0;
+}
+.back-color-container .document {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.back-color-container .mglass {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 190rpx;
+  width: 184rpx;
+}
+
+.swiper-container .bottom-font {
+  position: absolute;
+  left: 0;
+  bottom: 10%;
+  height: 51px;
+}
+
+.back-color-container .back-color-1 {
+  left: -200px;
+}
+
+.block-container {
+  position: relative;
+  margin-top: calc(5%);
+  margin-left: calc(50% - 220rpx);
+  width: 440rpx;
+  height: 440rpx;
+}
+
+ .block-container .block {
+  position: absolute;
+  width: 90rpx;
+  height: 90rpx;
+  opacity: 0;
+}
+
+.document-center-container {
+  position: relative;
+  margin-top: calc(5%);
+  height: 408rpx;
+}
+
+.tel-container {
+  position: relative;
+  margin-top: calc(5%);
+  height: 484rpx;
+}
+
+.tel-container image {
+  height: 100%;
+}
+
+.enter-btn-wrapper {
+  position: absolute;
+  bottom: 20%;
+  width: 100%;
+}
+
+.enter-btn-wrapper .enter-btn {
+  padding: 20rpx 50rpx;
+  margin: 0 auto;
+  border: 1px solid #1eaeb0;
+  border-radius: 20rpx;
+  background: rgba(255, 255, 255, 0.2);
+  color: whitesmoke;
+  text-align: center;
+  width: 280rpx;
+  font-size: 50rpx;
+  font-weight: 800;
+}
+
+.enter-btn-wrapper .enter-btn:active {
+  opacity: 0.7;
+}
+
+@keyframes leftToRight {
+  100% { transform: translateX(-60px); }
+}
+
+@keyframes rightToLeft {
+  100% { transform: translateX(200px); }
+}
+
+@keyframes spin {
+  from {
+    transform: translateY(-30%)
+               rotate(0turn)
+               translateY(30%)
+               rotate(2turn)
+  }
+  to {
+    transform: translateY(-30%)
+               rotate(2turn)
+               translateY(30%)
+               rotate(0turn)
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-spin {
+  animation: spin 2.4s ease-out;
+  animation-fill-mode: forwards;
+}
+
+.animate-right-to-left {
+  animation: rightToLeft 3s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.animate-left-to-right {
+  animation: leftToRight 3s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.item-hidden {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}

@@ -1,0 +1,231 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+.list-item {
+  background-color: white;
+  margin-top: 10rpx;
+  padding: 20rpx;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.item-title {
+  margin-bottom: 20rpx;
+  font-size: 34rpx;
+  line-height: 46rpx;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
+}
+
+/*.item-title:before {
+  content: '|';
+  background: rgb(0, 153, 153);
+  color: transparent;
+  width: 12rpx;
+  height: 100%;
+  display: inline-block;
+  margin-right: 15rpx;
+  border-radius: 10rpx;
+}*/
+
+.item-desc {
+  color: #777;
+  font-size: 30rpx;
+
+  /*height: 30px;
+  line-height: 15px;*/
+  /* 2行省略号 */
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
+}
+
+.item-update-time {
+  font-size: 28rpx;
+  text-align: right;
+  width: 100%;
+  margin-top: 15rpx;
+  color: rgb(0, 153, 153);
+}
+
+.item-sn {
+  color: rgb(0, 153, 153);
+  margin-right: 10rpx;
+}
+
+.item-hot {
+  border: 1px solid rgb(0, 153, 153);
+  color: rgb(0, 153, 153);
+  border-radius: 5px;
+  font-size: 28rpx;
+  padding: 0 3px !important;
+  margin-right: 10rpx;
+  margin-bottom: 1px;
+  display: inline-block;
+  line-height: 44rpx;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.fontsize-22 {
+  font-size: 22rpx;
+}
+
+.fontsize-24 {
+  font-size: 24rpx;
+}
+
+.fontsize-26 {
+  font-size: 26rpx;
+}
+
+.fontsize-28 {
+  font-size: 28rpx;
+}
+
+.fontsize-30 {
+  font-size: 30rpx;
+}
+
+.fontsize-32 {
+  font-size: 32rpx;
+}
+
+.fontsize-34 {
+  font-size: 34rpx;
+}
+
+.fontsize-36 {
+  font-size: 36rpx;
+}
+
+.fontsize-38 {
+  font-size: 38rpx;
+}
+
+.fontsize-40 {
+  font-size: 40rpx;
+}
+
+.fontsize-42 {
+  font-size: 42rpx;
+}
+
+.fontsize-44 {
+  font-size: 44rpx;
+}
+
+.fontsize-46 {
+  font-size: 46rpx;
+}
+
+.fontsize-48 {
+  font-size: 48rpx;
+}
+
+.fontsize-52 {
+  font-size: 52rpx;
+}
+
+.fontsize-54 {
+  font-size: 54rpx;
+}
+
+.fontsize-56 {
+  font-size: 56rpx;
+}
+
+.fontsize-58 {
+  font-size: 58rpx;
+}
+
+.fontsize-60 {
+  font-size: 60rpx;
+}
+
+.fontsize-62 {
+  font-size: 62rpx;
+}
+
+.fontsize-64 {
+  font-size: 64rpx;
+}
+
+.fontsize-66 {
+  font-size: 66rpx;
+}
+
+.fontsize-68 {
+  font-size: 68rpx;
+}
+
+.fontsize-70 {
+  font-size: 70rpx;
+}
+
+.fontsize-72 {
+  font-size: 72rpx;
+}
+
+.fontsize-80 {
+  font-size: 80rpx;
+}
+
+.fontsize-88 {
+  font-size: 88rpx;
+}
+
+.fontsize-96 {
+  font-size: 96rpx;
+}
+
+.fontweight-400 {
+  font-weight: 400;
+}
+
+.fontweight-500 {
+  font-weight: 500;
+}
+
+.fontweight-600 {
+  font-weight: 600;
+}
+
+.fontweight-700 {
+  font-weight: 700;
+}
+
+.fontweight-800 {
+  font-weight: 800;
+}
+
+.fontweight-900 {
+  font-weight: 900;
+}
+
+.fontweight-1000 {
+  font-weight: 1000;
+}
+
+.fontweight-1200 {
+  font-weight: 1200;
+}
+
+.inline {
+  display: inline-block;
+}

@@ -1,0 +1,27 @@
+<view class="list-wrapper">
+  <view class="list-header">
+    我们为你筛选出以下政策内容：
+  </view>
+  <view class="list-content">
+    <view wx:for="{{lists}}" wx:key="{{index}}" class="list-item" bindtap="toDetail" data-id="{{item.id}}">
+      <view class="item-title" data-id="{{item.id}}">
+        <span wx-if="{{item.important == 1}}" class="item-hot" data-id="{{item.id}}">热</span>
+        <span wx-if="item.sn" data-id="{{item.id}}" class="item-sn">[{{item.sn}}]</span>
+        <span data-id="{{item.id}}">{{ item.title }}</span>
+      </view>
+      <view class="item-desc" data-id="{{item.id}}">{{ item.description }}</view>
+      <view class="item-update-time" data-id="{{item.id}}">{{ item.createTime }}</view>
+    </view>
+    <view wx:if="{{lists.length > 0 || !isLoaded ? false : true}}" class="list-no-data">
+      <label>没有筛选到相关政策</label>
+    </view>
+  </view>
+  <view class="contact-wrapper">
+    <contact-button 
+      type="default-light" 
+      size="20"
+      session-from="weapp"
+      class="contact-btn">
+    </contact-button>
+  </view>
+</view>

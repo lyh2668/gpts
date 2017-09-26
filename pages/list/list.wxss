@@ -1,0 +1,43 @@
+.list-wrapper {
+  background-color: #eee;
+  /*height: 100vh;*/
+}
+
+.list-header {
+  height: 44px;
+  line-height: 44px;
+  color: black;
+  font-size: 32rpx;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 30rpx;
+  z-index: 1;
+  border-bottom: 1px solid #ddd;
+}
+
+.list-content {
+  /*position: absolute;*/
+  margin-top: 44px;
+  border-top: 5rpx solid #eee;
+}
+
+.list-no-data {
+  color: #bbb;
+  text-align: center;
+  margin: 50rpx;
+}
+
+.contact-wrapper {
+  background: rgba(0, 153, 153, .8);
+  position: fixed;
+  right: 30rpx;
+  bottom: 30rpx;
+  border-radius: 50%;
+}
+
+.contact-btn {
+  padding: 25rpx;
+}

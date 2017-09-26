@@ -1,0 +1,58 @@
+<view class="detail-wrapper">
+  <scroll-view>
+    <view class="header-wrapper block">
+      <view class="header-title">
+        <span wx-if="{{data.important == 1}}" class="item-hot">热</span>
+        <span wx-if="{{data.sn}}" class="item-sn">[{{data.sn}}]</span>
+        <span>{{ data.title }}</span>
+      </view>
+      <view class="header-others">
+        <view class="header-department">{{ data.cateName }}</view>
+        <view class="header-update-time">{{ data.createTime }}</view>
+      </view>
+    </view>
+    <view class="desc-wrapper block">
+      <view class="title">摘要</view>
+      <view class="desc-msg">{{ data.description }}</view>
+    </view>
+    <view class="content-wrapper block">
+      <view class="title">
+        重点内容
+      </view>
+      <!--<view class="content-msg">{{ data.content }}</view>-->
+      <view class="content-msg">
+        <import src="../../wxParse/wxParse.wxml" />
+        <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+      </view>
+    </view>
+    <view class="linkman-wrapper block" wx:if="{{ data.linkman }}">
+      <view class="title">联系方式</view>
+      <text class="linkman" selectable="true">
+        {{ data.linkman }}
+      </text>
+    </view>
+    <view class="download-file-wrapper block" wx:if="{{data.file && data.file.length > 0}}">
+      <view class="title">政策原文</view>
+      <view class="download-file">
+        <view class="file-item" wx:for="{{data.file}}" data-url="{{item.file}}" bindtap="downloadFile">
+          {{ item.name }}
+        </view>
+      </view>
+    </view>
+    <view class="link-wrapper block" wx:if="{{data.link}}">
+      <view class="title">政策链接（复制到浏览器处访问原网站）</view>
+      <text class="link" selectable="true">
+        {{ data.link }}
+      </text>
+    </view>
+  </scroll-view>
+  
+  <view class="contact-wrapper">
+    <contact-button 
+      type="default-light" 
+      size="20"
+      session-from="weapp"
+      class="contact-btn">
+    </contact-button>
+  </view>
+</view>

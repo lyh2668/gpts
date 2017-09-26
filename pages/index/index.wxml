@@ -1,0 +1,80 @@
+<!--index.wxml-->
+<view class="tabs">
+  <view class="tab-item {{curTabIndex === 0 ? 'tab-item-checked': ''}}"  data-index="0" bindtap="onTab">
+    <icon class="iconfont icon-index" data-index="0"></icon>
+    <text data-index="0">筛选</text>
+  </view>
+  <view class="tab-item {{curTabIndex === 1 ? 'tab-item-checked': ''}}" bindtap="onTab" data-index="1">
+    <icon class="iconfont icon-filter" data-index="1"></icon>
+    <text data-index="1">热门政策</text>
+  </view>
+</view>
+
+<view class="index-content" style="display: {{curTabIndex === 1 ? 'block': 'none'}};">
+  <view class="header-title">
+    最新最热门政策
+  </view>
+  <view class="content" upper-threshold="50">
+    <view wx:for="{{lists}}" wx:key="{{index}}" class="list-item" bindtap="toDetail" data-id="{{item.id}}">
+      <view class="item-title" data-id="{{item.id}}">
+        <span wx-if="{{item.important == 1}}" class="item-hot" data-id="{{item.id}}">热</span>
+        <span wx-if="item.sn" data-id="{{item.id}}" class="item-sn">[{{item.sn}}]</span>
+        <span data-id="{{item.id}}">{{ item.title }}</span>
+      </view>
+      <view class="item-desc" data-id="{{item.id}}">{{ item.description }}</view>
+      <!-- <view class="item-update-time" data-id="{{item.id}}">{{ item.createTime }}</view> -->
+    </view>
+  </view>
+</view>
+
+<view class="index-content" style="display: {{curTabIndex === 0 ? 'block': 'none'}};">
+
+  <view class="header-title">
+    <view>请选择你感兴趣的政策标签</view>
+    <view class="header-button" size="mini" plain bindtap="confirm">确定选择</view>
+  </view>
+  <view class="content">
+    <view wx:for="{{filter.fields}}" class="list-item" wx:key="index">
+      <view class="title inline">{{ filter.value[item].name }}</view>
+      <span wx:if="{{item == 'industry'}}" class="item-tips inline" bindtap="tapIndustry">范围</span>
+      <span wx:if="{{item == 'scale'}}" class="item-tips inline" bindtap="tapScale">规模</span>
+      <checkbox-group class="child-list" bindchange="ckChange" data-key="{{item}}">
+        <label wx:for="{{ filter.value[item].data }}" wx:for-item="childItem" wx:key="id" wx:for-index="childIndex" class="{{childItem.checked ? 'child-item-checked': 'child-item'}}" data-title="{{childItem.name}}" data-key="{{item}}" data-child-index="{{childIndex}}" bindtap="tapCk">
+          <checkbox hidden value="{{childItem.name}}" checked="{{childItem.checked}}" class="child-item-ck"/>
+          <text class="" data-title="{{childItem.name}}" data-key="{{item}}" data-child-index="{{childIndex}}">{{childItem.name}}</text>
+        </label>
+      </checkbox-group>
+      <checkbox-group class="" bindchange="ckChangeAll" data-key="{{item}}">
+        <view class="ck-all">
+          <checkbox value="{{item}}" checked="{{filter.value[item].checked}}">全选</checkbox>
+        </view>
+      </checkbox-group>
+    </view>
+  </view>
+  <view class="dialog-content" wx:if="{{dialog.visible}}" data-datas="{{dialog.datas}}">
+    <view class="dialog-msg" >
+      <view wx:for="{{dialog.datas}}">
+        <view class="title">
+          {{item.name}}
+        </view>
+        <view class="dialog-children-wrapper">
+          <view class="dialog-children-item" wx:for="{{item.children}}">
+          {{item.name}}
+        </view>
+        </view>
+      </view>
+    </view>
+    <view class="dialog-button-group">
+      <button bindtap="dialogConfirm" class="dialog-confirm">确定</button>
+    </view> 
+  </view>
+</view>
+<view class="cover-wrapper" wx:if="{{dialog.visible}}" bindtap="dialogClose"></view>
+  <view class="contact-wrapper">
+    <contact-button 
+      type="default-light" 
+      size="20"
+      session-from="weapp"
+      class="contact-btn">
+    </contact-button>
+  </view>

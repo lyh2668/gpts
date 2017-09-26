@@ -1,0 +1,75 @@
+<!--pages/launch/launch.wxml-->
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+  class="swiper-container"
+  bindchange="change"
+  current="current">
+  <!-- Page1  -->
+  <swiper-item>
+    <image class="top-brand" src="{{images.topBrand}}"></image>
+    <view class="back-color-container">
+      <image class="back-color-1 {{ current === 0 ? 'animate-right-to-left' : '' }}" src="{{images.backColor1}}" mode="left"></image>
+      <image class="back-color-2" src="{{images.backColor2}}" mode="center"></image>
+      <image class="back-color-3 {{ current === 0 ? 'animate-left-to-right' : '' }}" src="{{images.backColor3}}" mode="right"></image>
+      <image class="document" src="{{images.page1.document1}}"></image>
+      <image class="document" src="{{images.page1.document2}}"></image>
+      <image class="document" src="{{images.page1.document3}}"></image>
+      <image class="document" src="{{images.page1.document4}}"></image>
+      <image class="document" src="{{images.page1.document5}}"></image>
+      <image class="mglass {{ current === 0 ? 'animate-spin' : '' }}" src="{{images.page1.mglass}}"></image>
+    </view>
+    <image class="shadow" src="{{images.shadow}}" mode="center"></image>
+    <image class="bottom-font" src="{{images.page1.bottom}}" mode="center"></image>
+  </swiper-item>
+  <!-- Page2  -->
+  <swiper-item>
+    <image class="top-brand" src="{{images.topBrand}}" mode="center"></image>
+    <view class="back-color-container">
+      <image class="back-color-1 {{ current === 1 ? 'animate-right-to-left' : '' }}" src="{{images.backColor1}}" mode="left"></image>
+      <image class="back-color-2" src="{{images.backColor2}}" mode="center"></image>
+      <image class="back-color-3 {{ current === 1 ? 'animate-left-to-right' : '' }}" src="{{images.backColor3}}" mode="right"></image>
+       <view class="block-container">
+        <block wx:for="{{blocks}}" wx:if="{{blocks.length > 0}}" wx:key="{{index}}">
+          <image wx:if="{{item.value === 1}}" src="{{images.page2.block1}}" class="block" style="{{ current === 1 ? item.cls : '' }}"></image>
+          <image wx:else src="{{images.page2.block2}}" class="block" style="{{ current === 1 ? item.cls : '' }}"></image>
+        </block>
+      </view>
+    </view>
+    <image class="shadow" src="{{images.shadow}}" mode="center"></image>
+    <image class="bottom-font" src="{{images.page2.bottom}}" mode="center"></image>
+  </swiper-item>
+  <!-- Page3  -->
+  <swiper-item>
+    <image class="top-brand" src="{{images.topBrand}}" mode="center"></image>
+    <view class="back-color-container document-center-container">
+      <image class="back-color-1 {{ current === 2 ? 'animate-right-to-left' : '' }}" src="{{images.backColor1}}" mode="left"></image>
+      <image class="back-color-2" src="{{images.backColor2}}" mode="center"></image>
+      <image class="back-color-3 {{ current === 2 ? 'animate-left-to-right' : '' }}" src="{{images.backColor3}}" mode="right"></image>
+      <image src="{{images.page3.chatBottom}}" class="item-hidden" style="{{ current === 2 ? 'transition: all 700ms ease 300ms; opacity: 1; width: 100%; height: 100%;' : '' }}"></image>
+      <image src="{{images.page3.document}}"></image>
+      <image src="{{images.page3.chatTop}}" class="item-hidden" style="{{ current === 2 ? 'transition: all 1s ease 1000ms; opacity: 1; width: 100%; height: 100%;' : '' }}"></image>
+    </view>
+    <image class="shadow" src="{{images.shadow}}" mode="center"></image>
+    <image class="bottom-font" src="{{images.page3.bottom}}" mode="center"></image>
+  </swiper-item>
+  <!-- Page4  -->
+  <swiper-item>
+    <image class="top-brand" src="{{images.topBrand}}" mode="center"></image>
+    <view class="back-color-container">
+      <image class="back-color-1 {{ current === 3 ? 'animate-right-to-left' : '' }}" src="{{images.backColor1}}" mode="left"></image>
+      <image class="back-color-2" src="{{images.backColor2}}" mode="center"></image>
+      <image class="back-color-3 {{ current === 3 ? 'animate-left-to-right' : '' }}" src="{{images.backColor3}}" mode="right"></image>
+       <view class="tel-container">
+        <image src="{{images.page4.tel}}"></image>
+        <block wx:for="{{page4}}" wx:key="{{item.src}}">
+          <image src="{{item.src}}" class="item-hidden" style="{{current === 3 ? item.cls : ''}}"></image>
+        </block>
+       </view>
+    </view>
+    <image class="shadow" src="{{images.shadow}}" mode="center"></image>
+    <image class="bottom-font" src="{{images.page4.bottom}}" mode="center"></image>
+    <view class="enter-btn-wrapper item-hidden" style="{{ current === 3 ? 'transition: all 700ms ease 1500ms; opacity: 1; width: 100%; bottom:30%;' : '' }}">
+      <view bindtap="enter" class="enter-btn">进入小程序</view>
+    </view>
+  </swiper-item>
+</swiper>
